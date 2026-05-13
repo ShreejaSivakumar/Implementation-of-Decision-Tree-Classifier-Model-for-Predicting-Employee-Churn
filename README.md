@@ -30,52 +30,64 @@ Developed by: SHREEJA R S
 RegisterNumber:  25017561
 */
 
-
 import pandas as pd
 import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeClassifier, plot_tree
-from sklearn.metrics import accuracy_score
+from sklearn.metrics import accuracy_score, classification_report
+
 # 1. Load the dataset
 data = pd.read_csv("Employee.csv")
+
 # 2. Separate features and target BEFORE encoding
-#    Assumes the last column is the target (e.g., 'LeaveOrNot')
-X = data.iloc[:, :-1]   # All columns except the last
+X = data.iloc[:, :-1]   # All columns except last
 y = data.iloc[:, -1]    # Last column (target)
-# 3. One-hot encode only the FEATURES (X), not the target (y)
+
+# 3. One-hot encode only the features (X)
 X = pd.get_dummies(X, drop_first=True)
+
 # 4. Split into training and testing sets
 X_train, X_test, y_train, y_test = train_test_split(
     X, y, test_size=0.2, random_state=42
 )
-# 5. Train the Decision Tree model
+
+# 5. Train the Decision Tree Classifier
 model = DecisionTreeClassifier(random_state=42)
 model.fit(X_train, y_train)
-# 6. Predict and evaluate
+
+# 6. Predict and Evaluate
 y_pred = model.predict(X_test)
-print("Accuracy:", accuracy_score(y_test, y_pred))
+
+print("=" * 45)
+print("         DECISION TREE - RESULTS")
+print("=" * 45)
+print(f"\n✅ Accuracy : {accuracy_score(y_test, y_pred) * 100:.2f}%")
+print("\n📊 Classification Report:")
+print("-" * 45)
+print(classification_report(y_test, y_pred))
+
 # 7. Visualize the Decision Tree
-plt.figure(figsize=(20, 10))
+plt.figure(figsize=(22, 10))
 plot_tree(
     model,
-    feature_names=X.columns.tolist(),   # FIX: convert Index to list
-    class_names=[str(c) for c in model.classes_],  # FIX: add class names
+    feature_names=X.columns.tolist(),         # ✅ Fix: convert to list
+    class_names=[str(c) for c in model.classes_],  # ✅ Fix: class names
     filled=True,
-    rounded=True,       # nicer look
-    fontsize=10
+    rounded=True,
+    fontsize=9
 )
-plt.title("Decision Tree - Employee Leave Prediction")
-plt.tight_layout()     # FIX: prevents label clipping
-plt.savefig("decision_tree.png", dpi=150)  # optional: save the tree
-plt.show()  
-
+plt.title("Decision Tree Classifier - Employee Leave Prediction",
+          fontsize=16, fontweight='bold')
+plt.tight_layout()
+plt.savefig("decision_tree.png", dpi=150, bbox_inches='tight')
+plt.show()
 
 ```
 
 ## Output:
 ![decision tree classifier model](sam.png)
 
-<img width="804" height="182" alt="Screenshot_13-5-2026_131635_localhost" src="https://github.com/user-attachments/assets/44b781df-c3f6-4e5a-921d-0aa01ce92563" />
+<img width="762" height="458" alt="Screenshot_13-5-2026_133717_localhost" src="https://github.com/user-attachments/assets/538e5a02-6067-4a37-bdc0-c020f3917135" />
 
 
 ## Result:
