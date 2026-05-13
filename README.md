@@ -87,7 +87,10 @@ plt.show()
 ## Output:
 ![decision tree classifier model](sam.png)
 
-<img width="762" height="458" alt="Screenshot_13-5-2026_133717_localhost" src="https://github.com/user-attachments/assets/538e5a02-6067-4a37-bdc0-c020f3917135" />
+<img width="1302" height="651" alt="Screenshot_13-5-2026_134210_localhost" src="https://github.com/user-attachments/assets/a91bc554-5f0d-44cf-ad0d-e3e7abac6327" />
+
+<img width="667" height="438" alt="Screenshot_13-5-2026_134158_localhost" src="https://github.com/user-attachments/assets/1d97d6b2-4221-48af-ab2d-cd5cbe274bb4" />
+
 
 
 ## Result:
