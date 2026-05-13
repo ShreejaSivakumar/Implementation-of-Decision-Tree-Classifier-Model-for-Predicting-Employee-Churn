@@ -1,5 +1,5 @@
 # Implementation-of-Decision-Tree-Classifier-Model-for-Predicting-Employee-Churn
-
+# EXPT.NO : 08 
 
 # DATE : 13/05/2026
 
@@ -7,9 +7,11 @@
 # REG.NO : 25017561
 
 ## AIM:
+
 To write a program to implement the Decision Tree Classifier Model for Predicting Employee Churn.
 
 ## Equipments Required:
+
 1. Hardware – PCs
 2. Anaconda – Python 3.7 Installation / Jupyter notebook
 
@@ -23,6 +25,8 @@ To write a program to implement the Decision Tree Classifier Model for Predictin
 6. **Visualize** → Draw and save the tree as an image 
 
 ## Program:
+
+
 ```
 /*
 Program to implement the Decision Tree Classifier Model for Predicting Employee Churn.
@@ -82,11 +86,13 @@ plt.tight_layout()
 plt.savefig("decision_tree.png", dpi=150, bbox_inches='tight')
 plt.show()
 
+
+
+
+
 ```
 
 ## Output:
-![decision tree classifier model](sam.png)
-
 
 <img width="667" height="438" alt="Screenshot_13-5-2026_134158_localhost" src="https://github.com/user-attachments/assets/1d97d6b2-4221-48af-ab2d-cd5cbe274bb4" />
 
